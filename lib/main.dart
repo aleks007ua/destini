@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(Destini());
+void main() {
+  runApp(const Destini());
+}
 
 //TODO: Step 15 - Run the app and see if you can see the screen update with the first story. Delete this TODO if it looks as you expected.
 
@@ -11,7 +13,7 @@ class Destini extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      home: StoryPage(),
+      home: const StoryPage(),
     );
   }
 }
@@ -19,7 +21,7 @@ class Destini extends StatelessWidget {
 //TODO: Step 9 - Create a new storyBrain object from the StoryBrain class.
 
 class StoryPage extends StatefulWidget {
-  const StoryPage({ Key? key }) : super(key: key);
+  const StoryPage({Key? key}) : super(key: key);
 
   @override
   State<StoryPage> createState() => _StoryPageState();
@@ -28,8 +30,27 @@ class StoryPage extends StatefulWidget {
 class _StoryPageState extends State<StoryPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/background.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
+        constraints: const BoxConstraints.expand(),
+        // child: SafeArea(
+        //   child: Column(
+        //     crossAxisAlignment: CrossAxisAlignment.stretch,
+        //     children: const [
+        //       Expanded(
+        //         child: Center(),
+        //       ),
+        //     ],
+        //   ),
+        // ),
+      ),
     );
   }
 }
