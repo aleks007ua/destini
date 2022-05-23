@@ -81,17 +81,20 @@ class _StoryPageState extends State<StoryPage> {
                 color: Colors.green,
                 child: Expanded(
                   flex: 2,
-                  child: TextButton(
-                    onPressed: () {
-                      setState(() {
-                      storyBrain.nextStory(2);
-                    });
-                    },
-                    child: Text(
-                      storyBrain.getChoice2(),
-                      style: const TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.white,
+                  child: Visibility(
+                    visible: storyBrain.buttonShouldBeVisible(),
+                    child: TextButton(
+                      onPressed: () {
+                        setState(() {
+                        storyBrain.nextStory(2);
+                      });
+                      },
+                      child: Text(
+                        storyBrain.getChoice2(),
+                        style: const TextStyle(
+                          fontSize: 20.0,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
