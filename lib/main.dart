@@ -1,4 +1,4 @@
-import 'package:destini/story_brain.dart';
+import 'story_brain.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +21,7 @@ class Destini extends StatelessWidget {
   }
 }
 
-//TODO: Step 9 - Create a new storyBrain object from the StoryBrain class.
+
 
 class StoryPage extends StatefulWidget {
   const StoryPage({Key? key}) : super(key: key);
@@ -43,31 +43,28 @@ class _StoryPageState extends State<StoryPage> {
         ),
         padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
         constraints: const BoxConstraints.expand(),
-        // child: SafeArea(
-        //   child: Column(
-        //     crossAxisAlignment: CrossAxisAlignment.stretch,
-        //     children: const [
-        //       Expanded(
-        //         child: Center(),
-        //       ),
-        //     ],
-        //   ),
-        // ),
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: Center(
+                  child: Text(
+                    storyBrain.getStory(),
+                    style: const TextStyle(
+                      fontSize: 25.0,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
 }
 
-//         padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
-//         constraints: BoxConstraints.expand(),
-//         child: SafeArea(
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.stretch,
-//             children: <Widget>[
-//               Expanded(
-//                 flex: 12,
-//                 child: Center(
-//                   child: Text(
 //TODO: Step 10 - use the storyBrain to get the first story title and display it in this Text Widget.
 //                     'Story text will go here.',
 //                     style: TextStyle(
