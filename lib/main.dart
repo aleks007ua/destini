@@ -47,6 +47,7 @@ class _StoryPageState extends State<StoryPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+
               Expanded(
                 child: Center(
                   child: Text(
@@ -57,6 +58,49 @@ class _StoryPageState extends State<StoryPage> {
                   ),
                 ),
               ),
+
+              Container(
+                color: Colors.red,
+                child: Expanded(
+                  flex: 2,
+                  child: TextButton(
+                    onPressed: () {
+                      storyBrain.getChoice1();
+                    },
+                    child:  Text(
+                      storyBrain.getChoice1(),
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(
+                 height: 20.0,
+              ),
+
+              Container(
+                color: Colors.green,
+                child: Expanded(
+                  flex: 2,
+                  child: TextButton(
+                    onPressed: () {
+                      storyBrain.getChoice2();
+                    },
+                    child: Text(
+                      storyBrain.getChoice2(),
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
             ],
           ),
         ),
@@ -65,14 +109,6 @@ class _StoryPageState extends State<StoryPage> {
   }
 }
 
-//TODO: Step 10 - use the storyBrain to get the first story title and display it in this Text Widget.
-//                     'Story text will go here.',
-//                     style: TextStyle(
-//                       fontSize: 25.0,
-//                     ),
-//                   ),
-//                 ),
-//               ),
 //               Container(
 //                 color: Colors.red,
 //                 child: Expanded(
