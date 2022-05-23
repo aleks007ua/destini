@@ -1,8 +1,11 @@
+import 'package:destini/story_brain.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const Destini());
 }
+
+StoryBrain storyBrain = StoryBrain();
 
 //TODO: Step 15 - Run the app and see if you can see the screen update with the first story. Delete this TODO if it looks as you expected.
 
